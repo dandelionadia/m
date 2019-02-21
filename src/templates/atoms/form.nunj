@@ -1,0 +1,7 @@
+{% macro input(name, type, class) %}
+<input
+  type="{{ type }}"
+  name="{{ name }}"
+  class="form-control{% if class %} {{ class }}{% endif %}"
+/>
+{% endmacro %}

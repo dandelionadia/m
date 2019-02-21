@@ -1,0 +1,3 @@
+{% macro button(text) %}
+<button class="btn btn-primary">{{ text }}</button>
+{% endmacro %}

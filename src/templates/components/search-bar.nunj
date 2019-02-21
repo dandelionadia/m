@@ -1,0 +1,7 @@
+{% import "atoms/form.nunj" as forms %}
+{% import "atoms/button.nunj" as buttons %}
+
+<div class="search-bar">
+  {{ forms.input('query', 'text', 'search-bar__input') }}
+  {{ buttons.button('Search') }}
+</div>
