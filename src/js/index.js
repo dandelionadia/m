@@ -3,7 +3,6 @@ function getTimeList(list) {
     const itemSum = obj.items ? getTimeList(obj.items) : 0
     return acc.concat(obj.timeHappyPath).concat(itemSum)
   }, [])
-
   return result;
 }
 
@@ -22,4 +21,6 @@ fetch('https://private-anon-ce29f4d7f4-urbansim753.apiary-mock.com/priceList', {
     const timeList = getTimeList(data)
     const totalTime = getTotalTime(timeList)
     console.log(totalTime)
+
+    document.getElementById('totalTime').innerText = totalTime;
   })
