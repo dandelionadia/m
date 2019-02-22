@@ -6,8 +6,11 @@
     <div class="d-none d-sm-block col-md-12">
       <h1 class="title">Json Tabulka</h1>
     </div>
-    <div>
-      <p>Spolu HappyPaths: <span id="totalTime">{{text}}</span></p>
+    <div class="col-12">
+      <p>Spolu HappyPaths: <span id="totalTime"></span></p>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div id="table-container"></div>
     </div>
   </div>
 </div>

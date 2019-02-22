@@ -1,0 +1,40 @@
+.myTable {
+    padding: 0;
+    color: $color-gray-light;
+    
+    &__row {
+        background-color: $color-black-dark;
+        width: 578px;
+        list-style: none;
+    }
+}
+
+.column {
+    display: inline-block;
+    min-width: 100px;
+    padding: 5px;
+    border: 1px solid  $color-black-dark;
+
+    &__name {
+        background-color: $color-black-light;
+        font-weight: 600;
+
+        &--main {
+          min-width: 150px;
+        }
+    }
+
+    &__main {
+        background-color: $color-black-light;
+        min-width: 150px;
+    }
+
+    &__secondary {
+        background-color: $color-black-light;
+        min-width: 100px;
+    }
+}
+
+li ul span:first-child {
+    padding-left: 15px;
+}
