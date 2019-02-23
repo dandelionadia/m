@@ -13,22 +13,23 @@ function getTotalTime(arr) {
   return numb;
 }
 
-function createTable(arr) {
+function createTable(arr, level = 1) {
   const ul = document.createElement('ul')
   ul.classList.add('myTable')
 
   arr.forEach(function (obj) {
+    const paddingLeft = 15 * level;
     const li = document.createElement('li')
     li.classList.add('myTable__row')
     li.insertAdjacentHTML('beforeend', `
-    <span class="column column__main">${obj.activity}</span>
+    <span class="column column__main" style="padding-left:${paddingLeft}px">${obj.activity}</span>
     <span class="column column__secondary">${obj.timeHappyPath}</span>
     <span class="column column__secondary">${obj.timeExpertEstimation}</span>
     <span class="column column__secondary">${obj.timeWorstCase}</span>
     `)
 
     if (obj.items) {
-      const attachment = createTable(obj.items)
+      const attachment = createTable(obj.items, level + 1)
       li.appendChild(attachment)
     }
 

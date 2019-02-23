@@ -10,7 +10,16 @@
       <p>Spolu HappyPaths: <span id="totalTime"></span></p>
     </div>
     <div class="col-12 d-flex justify-content-center align-items-center">
-      <div id="table-container"></div>
+      <div id="table-container">
+        <ul class='myTable'>
+          <li class='myTable__row'>
+            <span class="column column__main">Activity</span>
+            <span class="column column__secondary">TimeHappyPath</span>
+            <span class="column column__secondary">TimeExpertEstimation</span>
+            <span class="column column__secondary">TimeWorstCase</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
