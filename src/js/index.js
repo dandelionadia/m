@@ -39,6 +39,29 @@ function createTable(arr, level = 1) {
   return ul
 }
 
+function createList(arr) {
+  const ul = document.createElement('ul')
+
+  arr.forEach(function (obj) {
+    const li = document.createElement('li')
+    li.insertAdjacentHTML('beforeend', `
+    <span>${obj.activity}</span>
+    <span>${obj.timeHappyPath}</span>
+    <span>${obj.timeExpertEstimation}</span>
+    <span>${obj.timeWorstCase}</span>
+    `)
+
+    if (obj.items) {
+      const attachment = createList(obj.items)
+      li.appendChild(attachment)
+    }
+
+    ul.appendChild(li)
+  })
+
+  return ul
+}
+
 fetch('https://private-anon-ce29f4d7f4-urbansim753.apiary-mock.com/priceList', { method: 'GET' })
   .then(function (res) {
     return res.json()
@@ -50,5 +73,7 @@ fetch('https://private-anon-ce29f4d7f4-urbansim753.apiary-mock.com/priceList', {
     document.getElementById('totalTime').innerText = totalTime;
 
     const html = createTable(data)
+    const htmlList = createList(data)
     document.getElementById('table-container').appendChild(html)
+    document.getElementById('list-container').appendChild(htmlList)
   })
